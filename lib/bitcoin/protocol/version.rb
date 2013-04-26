@@ -1,3 +1,4 @@
+# encoding: ASCII-8BIT
 module Bitcoin
   module Protocol
 
@@ -17,7 +18,7 @@ module Bitcoin
       end
 
       def to_payload
-        payload = [
+        [
           @fields.values_at(:version, :services, :time).pack("VQQ"),
           pack_address_field(@fields[:from]),
           pack_address_field(@fields[:to]),
